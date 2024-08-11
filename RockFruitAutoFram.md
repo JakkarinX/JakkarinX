@@ -1,7 +1,9 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Jakkarin Hub", "Synapse")
+local Window = OrionLib:MakeWindow({Name = "JAKKARIN Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-local Tab = Window:NewTab("Auto")
+local Section = Window:MakeTab({
+    Name = "เมนู"
+})
+
 local toggleButtons = {}
 local activeConnections = {}
 
@@ -122,8 +124,8 @@ Section:AddToggle({
             for _, v in ipairs(game.Workspace.Mob:GetDescendants()) do
                 if v:FindFirstChild("HumanoidRootPart") then
                     local HRP = v:FindFirstChild("HumanoidRootPart")
-                    HRP.Size = Vector3.new(85, 85, 85)
-                    HRP.Transparency = 0.8
+                    HRP.Size = Vector3.new(90, 90, 90)
+                    HRP.Transparency = 0.9
                     HRP.Color = Color3.fromRGB(255, 255, 255)
                     HRP.Visible = true
                 end
